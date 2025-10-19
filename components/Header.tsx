@@ -33,8 +33,17 @@ const Header: React.FC = () => {
         setIsMenuOpen(false);
     };
 
-    const SrivalliLogoText = () => (
-        <span className={`text-3xl sm:text-4xl font-display tracking-wider transition-colors duration-300 ${isScrolled ? 'text-brand-green' : 'text-white'}`}>Srivalli</span>
+    const SrivalliLogo = () => (
+        <div className="flex items-center gap-3">
+            <img 
+                src="/images/srivalli-logo.jpg" 
+                alt="Srivalli Logo" 
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-lg ring-2 ring-white/50 transition-transform duration-300 hover:scale-110"
+            />
+            <span className={`text-2xl sm:text-3xl font-display tracking-wider transition-colors duration-300 ${isScrolled ? 'text-brand-green' : 'text-white'}`}>
+                Srivalli
+            </span>
+        </div>
     );
     
     const DesktopNavLinks = () => (
@@ -71,7 +80,7 @@ const Header: React.FC = () => {
         <header className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-md' : 'bg-transparent backdrop-blur-sm'}`}>
             <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
                 <button onClick={() => scrollToSection('hero')} aria-label="Back to top">
-                    <SrivalliLogoText />
+                    <SrivalliLogo />
                 </button>
                 <nav className="hidden md:flex items-center space-x-8">
                     <DesktopNavLinks />

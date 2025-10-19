@@ -25,26 +25,43 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-      {!imageError ? (
-        <img 
-          src={review.image} 
-          alt={review.author} 
-          className="w-20 h-20 rounded-full mx-auto -mt-16 border-4 border-white shadow-md object-cover"
-          onError={handleImageError}
-        />
-      ) : (
-        <div className="w-20 h-20 rounded-full mx-auto -mt-16 border-4 border-white shadow-md bg-brand-beige flex items-center justify-center">
-          <span className="text-brand-green font-bold text-2xl">
-            {review.author.charAt(0)}
-          </span>
+    <div className="bg-white p-6 rounded-lg shadow-lg flex-shrink-0 w-80 md:w-96 hover:shadow-2xl transition-shadow duration-300">
+      <div className="flex items-start gap-4 mb-4">
+        {!imageError ? (
+          <img 
+            src={review.image} 
+            alt={review.author} 
+            className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-green/20"
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="w-12 h-12 rounded-full bg-brand-green flex items-center justify-center ring-2 ring-brand-green/20">
+            <span className="text-white font-bold text-lg">
+              {review.author.charAt(0)}
+            </span>
+          </div>
+        )}
+        <div className="flex-1">
+          <h4 className="font-bold text-brand-green text-base">{review.author}</h4>
+          <div className="flex items-center gap-2 mt-1">
+            <StarRating rating={review.rating} />
+            {review.date && (
+              <span className="text-gray-400 text-xs">• {review.date}</span>
+            )}
+          </div>
         </div>
-      )}
-      <p className="text-gray-600 italic my-4">"{review.quote}"</p>
-      <h4 className="font-bold text-brand-green text-lg">{review.author}</h4>
-      <div className="mt-2 flex justify-center">
-        <StarRating rating={review.rating} />
+        {review.platform && (
+          <div className="flex items-center gap-1 text-xs text-gray-500">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Google</span>
+          </div>
+        )}
       </div>
+      <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+        {review.quote}
+      </p>
     </div>
   );
 };

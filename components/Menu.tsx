@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Section from './Section';
 import MenuItemCard from './MenuItemCard';
-import RecommendationModal from './RecommendationModal';
 import { MENU_ITEMS } from '../constants';
 
 const INITIAL_LOAD_COUNT = 9;
@@ -11,7 +10,6 @@ const Menu: React.FC = () => {
   const categories = Array.from(new Set(MENU_ITEMS.map(item => item.category)));
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [visibleItemsCount, setVisibleItemsCount] = useState(INITIAL_LOAD_COUNT);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setVisibleItemsCount(INITIAL_LOAD_COUNT);
@@ -50,15 +48,6 @@ const Menu: React.FC = () => {
         ))}
       </div>
       
-      <div className="text-center mb-12">
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="bg-brand-saffron text-white font-semibold py-3 px-6 sm:px-8 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 shadow-lg"
-          >
-            ✨ Get a Personal Recommendation
-          </button>
-      </div>
-      
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {visibleItems.map((item, index) => (
           <MenuItemCard key={item.id} item={item} index={index} />
@@ -75,12 +64,6 @@ const Menu: React.FC = () => {
           </button>
         </div>
       )}
-      
-      <RecommendationModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)}
-        menuItems={MENU_ITEMS}
-      />
     </Section>
   );
 };

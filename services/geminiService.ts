@@ -2,14 +2,17 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import type { MenuItem } from '../types';
 
-if (!process.env.API_KEY) {
+const API_KEY = process.env.API_KEY;
+
+if (!API_KEY) {
   console.warn("API_KEY environment variable not set. Gemini features will be disabled.");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// Only initialize the AI client if we have an API key
+const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 
 export const getDishRecommendation = async (preferences: string, menu: MenuItem[]): Promise<{ dishName: string; reason: string; } | null> => {
-  if (!process.env.API_KEY) {
+  if (!ai) {
     return {
       dishName: 'Masala Dosa',
       reason: 'This classic dish is a crowd-pleaser, known for its crispy texture and flavorful potato filling. It is a great choice for anyone new to South Indian cuisine. (This is a sample response as API key is not configured).',

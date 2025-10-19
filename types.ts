@@ -13,6 +13,8 @@ export interface Review {
   quote: string;
   rating: number;
   image: string;
+  date?: string;
+  platform?: string;
 }
 
 export interface NavLink {

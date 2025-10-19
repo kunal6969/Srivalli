@@ -16,10 +16,10 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
         setIsLoading(false)
-    }, 2500);
+    }, 3000);
      const fadeTimer = setTimeout(() => {
         setIsLoaded(true)
-    }, 2200);
+    }, 2800);
     return () => {
         clearTimeout(timer);
         clearTimeout(fadeTimer);
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   return (
     <>
       <Preloader isLoading={isLoading} />
-      <div className={`bg-brand-cream font-sans text-gray-800 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`bg-brand-cream font-sans text-gray-800 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} style={{minHeight: '100vh'}}>
         <Header />
         <main>
           <Hero />

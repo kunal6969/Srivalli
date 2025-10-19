@@ -16,7 +16,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
 
   return (
     <div 
-      className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300"
+      className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
       style={{ animation: `fadeInUp 0.5s ease-out ${animationDelay} forwards`, opacity: 0 }}
     >
       <div className="h-48 overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -24,7 +24,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
           <img 
             src={item.image} 
             alt={item.name} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             onError={handleImageError}
           />
         ) : (
@@ -37,13 +37,10 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
         )}
       </div>
       <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-bold text-brand-green mb-2">{item.name}</h3>
+        <h3 className="text-xl font-bold text-brand-green mb-2 transition-colors duration-300 group-hover:text-brand-terracotta">{item.name}</h3>
         <p className="text-gray-600 text-sm mb-4 flex-grow">{item.description}</p>
-        <div className="flex justify-between items-center mt-auto">
-          <span className="text-2xl font-display text-brand-terracotta">₹{item.price}</span>
-          <button className="bg-brand-beige text-brand-green font-semibold py-2 px-4 rounded-full hover:bg-brand-saffron hover:text-white transition-colors duration-300 text-sm">
-            Add to Order
-          </button>
+        <div className="mt-auto">
+          <span className="text-2xl font-display text-brand-terracotta transition-all duration-300 group-hover:text-3xl">{`₹${item.price}`}</span>
         </div>
       </div>
       <style>{`
