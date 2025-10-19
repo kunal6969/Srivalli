@@ -140,7 +140,7 @@ const Gallery: React.FC = () => {
                 className="relative flex-shrink-0 overflow-hidden group cursor-pointer 
                   transform transition-all duration-700 ease-out
                   focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-4
-                  luxury-card"
+                  luxury-card active:scale-[0.98]"
                 style={{
                   width: 'calc(100vw - 32px)',
                   maxWidth: index === 0 ? '550px' : '400px',
@@ -148,7 +148,8 @@ const Gallery: React.FC = () => {
                   maxHeight: index === 0 ? '650px' : '500px',
                   scrollSnapAlign: 'center',
                   animationDelay: `${index * 0.15}s`,
-                  borderRadius: '24px'
+                  borderRadius: '24px',
+                  boxShadow: '0 12px 48px rgba(0,0,0,0.12), 0 6px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.05)'
                 }}
                 aria-label={`View image ${index + 1} in full screen`}
               >

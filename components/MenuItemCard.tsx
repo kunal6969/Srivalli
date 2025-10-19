@@ -16,17 +16,25 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
 
   return (
     <div 
-      className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
-      style={{ animation: `fadeInUp 0.5s ease-out ${animationDelay} forwards`, opacity: 0 }}
+      className="bg-white rounded-2xl overflow-hidden flex flex-col transform active:scale-[0.98] transition-all duration-300 cursor-pointer group"
+      style={{ 
+        animation: `fadeInUp 0.5s ease-out ${animationDelay} forwards`, 
+        opacity: 0,
+        boxShadow: '0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06)'
+      }}
     >
-      <div className="h-48 overflow-hidden bg-gray-200 flex items-center justify-center">
+      <div className="h-56 sm:h-60 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative">
         {!imageError ? (
-          <img 
-            src={item.image} 
-            alt={item.name} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            onError={handleImageError}
-          />
+          <>
+            <img 
+              src={item.image} 
+              alt={item.name} 
+              className="w-full h-full object-cover transition-transform duration-700 group-active:scale-105"
+              onError={handleImageError}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300"></div>
+          </>
         ) : (
           <div className="text-gray-400 text-center p-4">
             <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
@@ -36,11 +44,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
           </div>
         )}
       </div>
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-bold text-brand-green mb-2 transition-colors duration-300 group-hover:text-brand-terracotta">{item.name}</h3>
-        <p className="text-gray-600 text-sm mb-4 flex-grow">{item.description}</p>
-        <div className="mt-auto">
-          <span className="text-2xl font-display text-brand-terracotta transition-all duration-300 group-hover:text-3xl">{`₹${item.price}`}</span>
+      <div className="p-5 sm:p-6 flex-grow flex flex-col">
+        <h3 className="text-xl sm:text-2xl font-bold text-brand-green mb-2 transition-colors duration-300 group-active:text-brand-terracotta leading-tight">{item.name}</h3>
+        <p className="text-gray-600 text-sm sm:text-base mb-4 flex-grow leading-relaxed">{item.description}</p>
+        <div className="mt-auto pt-3 border-t border-gray-100">
+          <span className="text-2xl sm:text-3xl font-display font-semibold text-brand-terracotta">{`₹${item.price}`}</span>
         </div>
       </div>
       <style>{`

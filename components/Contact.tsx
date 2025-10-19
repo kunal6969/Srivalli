@@ -55,28 +55,31 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Section id="contact" className="bg-white">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl sm:text-5xl font-display text-brand-green mb-4 tracking-wide">Get In Touch</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+    <Section id="contact" className="bg-gradient-to-b from-white via-brand-cream/10 to-white">
+      <div className="text-center mb-10 sm:mb-12 px-4">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-brand-green mb-4 tracking-tight">Get In Touch</h2>
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
           We'd love to hear from you. Visit us or drop us a line.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-        <div>
-          <h3 className="text-2xl font-semibold text-brand-green mb-4">Contact Information</h3>
-          <div className="space-y-4 text-gray-700">
-            <p><strong>Address:</strong> D-178, Anurag Path, behind WTP, D-Block, Malviya Nagar, Jaipur, Rajasthan 302017</p>
-            <p><strong>Phone:</strong> +91-9314662006</p>
-            <p><strong>Email:</strong> reservations@srivalli.com</p>
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-0">
+        <div className="order-2 md:order-1">
+          <h3 className="text-2xl sm:text-3xl font-bold text-brand-green mb-5">Contact Information</h3>
+          <div className="space-y-5 text-gray-700 text-base sm:text-lg">
+            <p className="leading-relaxed"><strong className="text-brand-green">Address:</strong> D-178, Anurag Path, behind WTP, D-Block, Malviya Nagar, Jaipur, Rajasthan 302017</p>
+            <p><strong className="text-brand-green">Phone:</strong> <a href="tel:+919314662006" className="hover:text-brand-terracotta transition-colors">+91-9314662006</a></p>
+            <p><strong className="text-brand-green">Email:</strong> <a href="mailto:reservations@srivalli.com" className="hover:text-brand-terracotta transition-colors">reservations@srivalli.com</a></p>
           </div>
-          <h3 className="text-2xl font-semibold text-brand-green mt-8 mb-4">Operating Hours</h3>
-          <div className="space-y-2 text-gray-700">
-            <p><strong>Monday - Friday:</strong> 11:00 AM - 10:00 PM</p>
-            <p><strong>Saturday - Sunday:</strong> 10:00 AM - 11:00 PM</p>
+          <h3 className="text-2xl sm:text-3xl font-bold text-brand-green mt-8 mb-5">Operating Hours</h3>
+          <div className="space-y-3 text-gray-700 text-base sm:text-lg">
+            <p><strong className="text-brand-green">Monday - Friday:</strong> 11:00 AM - 10:00 PM</p>
+            <p><strong className="text-brand-green">Saturday - Sunday:</strong> 10:00 AM - 11:00 PM</p>
           </div>
-           <div className="mt-8 h-64 bg-gray-200 rounded-lg overflow-hidden">
+           <div className="mt-8 h-64 sm:h-80 bg-gray-200 rounded-2xl overflow-hidden"
+                style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)'
+                }}>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d889.8710292806283!2d75.80635710000001!3d26.8537084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db7d83d8db239%3A0xace0bcaa37b06a6e!2sSrivalli!5e0!3m2!1sen!2sin!4v1721935824513!5m2!1sen!2sin"
                     width="100%"
@@ -88,24 +91,27 @@ const Contact: React.FC = () => {
                 ></iframe>
             </div>
         </div>
-        <div className="bg-brand-cream p-8 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-semibold text-brand-green mb-6">Send Us a Message</h3>
+        <div className="bg-gradient-to-br from-brand-cream to-white p-6 sm:p-8 rounded-2xl order-1 md:order-2"
+             style={{
+               boxShadow: '0 12px 48px rgba(0,0,0,0.1), 0 6px 24px rgba(0,0,0,0.08)'
+             }}>
+          <h3 className="text-2xl sm:text-3xl font-bold text-brand-green mb-6">Send Us a Message</h3>
           
           {status === 'success' && (
-            <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+            <div className="mb-6 p-4 sm:p-5 bg-green-50 border-2 border-green-400 text-green-700 rounded-xl font-medium text-sm sm:text-base">
               ✓ Message sent successfully! We'll get back to you soon.
             </div>
           )}
           
           {status === 'error' && (
-            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+            <div className="mb-6 p-4 sm:p-5 bg-red-50 border-2 border-red-400 text-red-700 rounded-xl font-medium text-sm sm:text-base">
               ✗ {errorMessage}
             </div>
           )}
 
           <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name *</label>
+            <div className="mb-5">
+              <label htmlFor="name" className="block text-brand-green font-semibold mb-2 text-sm sm:text-base">Name *</label>
               <input 
                 type="text" 
                 id="name" 
@@ -113,11 +119,11 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-brand-beige rounded-md focus:outline-none focus:ring-2 focus:ring-brand-saffron" 
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 border-2 border-brand-green/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all text-base bg-white" 
               />
             </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
+            <div className="mb-5">
+              <label htmlFor="email" className="block text-brand-green font-semibold mb-2 text-sm sm:text-base">Email *</label>
               <input 
                 type="email" 
                 id="email" 
@@ -125,11 +131,11 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-brand-beige rounded-md focus:outline-none focus:ring-2 focus:ring-brand-saffron" 
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 border-2 border-brand-green/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all text-base bg-white" 
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message *</label>
+              <label htmlFor="message" className="block text-brand-green font-semibold mb-2 text-sm sm:text-base">Message *</label>
               <textarea 
                 id="message" 
                 name="message" 
@@ -137,15 +143,18 @@ const Contact: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-brand-beige rounded-md focus:outline-none focus:ring-2 focus:ring-brand-saffron"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 border-2 border-brand-green/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all text-base bg-white resize-none"
               ></textarea>
             </div>
             <button 
               type="submit" 
               disabled={status === 'loading'}
-              className="w-full bg-brand-green text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-brand-green to-brand-green/90 text-white font-bold py-4 sm:py-5 px-6 rounded-full active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-base sm:text-lg"
+              style={{
+                boxShadow: '0 6px 24px rgba(26, 71, 42, 0.3), 0 3px 12px rgba(26, 71, 42, 0.2)'
+              }}
             >
-              {status === 'loading' ? 'Sending...' : 'Submit'}
+              {status === 'loading' ? 'Sending...' : 'Submit Message'}
             </button>
           </form>
         </div>

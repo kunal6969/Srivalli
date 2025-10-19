@@ -24,43 +24,49 @@ const Menu: React.FC = () => {
   };
 
   return (
-    <Section id="menu" className="bg-white">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl sm:text-5xl font-display text-brand-green mb-4 tracking-wide">Our Menu</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+    <Section id="menu" className="bg-gradient-to-b from-white via-brand-cream/10 to-white">
+      <div className="text-center mb-10 sm:mb-12 px-4">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-brand-green mb-4 tracking-tight">Our Menu</h2>
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
           Explore a curated selection of dishes made with passion, tradition, and the finest ingredients.
         </p>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-2 md:gap-4 mb-12">
+      <div className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12 px-4">
         {categories.map(category => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 sm:px-6 py-2.5 rounded-full font-semibold text-sm md:text-base transition-all duration-300 ${
+            className={`px-5 sm:px-7 py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 active:scale-95 ${
               activeCategory === category 
-                ? 'bg-brand-green text-white shadow-soft-lg' 
-                : 'bg-brand-beige text-brand-green hover:bg-brand-green/10'
+                ? 'bg-brand-green text-white shadow-lg' 
+                : 'bg-white text-brand-green hover:bg-brand-green/5 border-2 border-brand-green/20'
             }`}
+            style={activeCategory === category ? {
+              boxShadow: '0 4px 16px rgba(26, 71, 42, 0.25), 0 2px 8px rgba(26, 71, 42, 0.15)'
+            } : {}}
           >
             {category}
           </button>
         ))}
       </div>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-4 sm:px-0">
         {visibleItems.map((item, index) => (
           <MenuItemCard key={item.id} item={item} index={index} />
         ))}
       </div>
 
       {hasMoreItems && (
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 sm:mt-12 px-4">
           <button
             onClick={handleLoadMore}
-            className="bg-brand-green text-white font-semibold py-3 px-8 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 shadow-lg"
+            className="bg-gradient-to-r from-brand-green to-brand-green/90 text-white font-bold py-4 px-10 sm:px-12 rounded-full active:scale-95 transition-all duration-300 w-full sm:w-auto"
+            style={{
+              boxShadow: '0 6px 24px rgba(26, 71, 42, 0.3), 0 3px 12px rgba(26, 71, 42, 0.2)'
+            }}
           >
-            Load More
+            Load More Dishes
           </button>
         </div>
       )}

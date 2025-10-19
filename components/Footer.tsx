@@ -8,51 +8,56 @@ const Footer: React.FC = () => {
     ];
     
     return (
-        <footer className="bg-brand-green text-brand-beige">
-            <div className="container mx-auto px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <footer className="bg-gradient-to-b from-brand-green to-brand-green/95 text-brand-beige">
+            <div className="container mx-auto px-5 sm:px-6 py-10 sm:py-12 md:py-16">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10">
                     <div className="md:col-span-1 text-center md:text-left">
                         <div className="flex items-center gap-3 justify-center md:justify-start mb-4">
                             <img 
                                 src="/images/srivalli-logo.jpg" 
                                 alt="Srivalli Logo" 
-                                className="w-16 h-16 rounded-full object-cover shadow-lg ring-2 ring-white/30"
+                                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover ring-2 ring-white/40"
+                                style={{
+                                    boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
+                                }}
                             />
                             <div>
-                                <h3 className="text-3xl font-display tracking-wider text-white">Srivalli</h3>
-                                <p className="text-xs text-brand-gold">JAIPUR</p>
+                                <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-wide text-white">Srivalli</h3>
+                                <p className="text-xs sm:text-sm text-brand-gold font-semibold tracking-widest">JAIPUR</p>
                             </div>
                         </div>
-                        <p className="text-sm">Flavours of Southern India</p>
+                        <p className="text-sm sm:text-base text-brand-cream/90">Flavours of Southern India</p>
                     </div>
                     <div className="text-center md:text-left">
-                        <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-                        <ul className="space-y-2">
-                            <li><a href="#home" className="hover:text-brand-gold transition-colors">Home</a></li>
-                            <li><a href="#menu" className="hover:text-brand-gold transition-colors">Menu</a></li>
-                            <li><a href="#about" className="hover:text-brand-gold transition-colors">About Us</a></li>
-                            <li><a href="#contact" className="hover:text-brand-gold transition-colors">Contact</a></li>
+                        <h4 className="font-bold text-white mb-4 sm:mb-5 text-base sm:text-lg">Quick Links</h4>
+                        <ul className="space-y-2 sm:space-y-3">
+                            <li><a href="#home" className="hover:text-brand-gold transition-colors text-sm sm:text-base active:scale-95 inline-block">Home</a></li>
+                            <li><a href="#menu" className="hover:text-brand-gold transition-colors text-sm sm:text-base active:scale-95 inline-block">Menu</a></li>
+                            <li><a href="#about" className="hover:text-brand-gold transition-colors text-sm sm:text-base active:scale-95 inline-block">About Us</a></li>
+                            <li><a href="#contact" className="hover:text-brand-gold transition-colors text-sm sm:text-base active:scale-95 inline-block">Contact</a></li>
                         </ul>
                     </div>
                     <div className="text-center md:text-left">
-                        <h4 className="font-semibold text-white mb-4">Contact Us</h4>
-                        <p className="text-sm">D-178, Anurag Path, Malviya Nagar, Jaipur</p>
-                        <p className="text-sm">contact@srivalli.com</p>
-                        <p className="text-sm">+91 9314662006</p>
+                        <h4 className="font-bold text-white mb-4 sm:mb-5 text-base sm:text-lg">Contact Us</h4>
+                        <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-brand-cream/90">
+                            <p>D-178, Anurag Path,<br/>Malviya Nagar, Jaipur</p>
+                            <p><a href="mailto:contact@srivalli.com" className="hover:text-brand-gold transition-colors">contact@srivalli.com</a></p>
+                            <p><a href="tel:+919314662006" className="hover:text-brand-gold transition-colors">+91 9314662006</a></p>
+                        </div>
                     </div>
                     <div className="text-center md:text-left">
-                        <h4 className="font-semibold text-white mb-4">Follow Us</h4>
-                        <div className="flex space-x-4 justify-center md:justify-start">
+                        <h4 className="font-bold text-white mb-4 sm:mb-5 text-base sm:text-lg">Follow Us</h4>
+                        <div className="flex space-x-5 sm:space-x-6 justify-center md:justify-start">
                            {socialLinks.map(link => (
-                               <a key={link.name} href={link.href} aria-label={link.name} className="text-brand-beige hover:text-brand-gold transition-colors">
+                               <a key={link.name} href={link.href} aria-label={link.name} className="text-brand-beige hover:text-brand-gold transition-all active:scale-90 duration-300 p-2 rounded-full hover:bg-white/10">
                                    {link.icon}
                                </a>
                            ))}
                         </div>
                     </div>
                 </div>
-                <div className="mt-12 border-t border-white/20 pt-8 text-center text-sm">
-                    <p>&copy; {new Date().getFullYear()} Srivalli Restaurant. All Rights Reserved.</p>
+                <div className="mt-10 sm:mt-12 border-t border-white/20 pt-6 sm:pt-8 text-center text-xs sm:text-sm">
+                    <p className="text-brand-cream/80">&copy; {new Date().getFullYear()} Srivalli Restaurant. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
