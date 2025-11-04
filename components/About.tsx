@@ -1,14 +1,14 @@
 import React from 'react';
 import Section from './Section';
 import ReviewCard from './ReviewCard';
-import { ABOUT_IMAGE, REVIEWS, GOOGLE_MAPS_PLACE_URL } from '../constants';
+import { REVIEWS, GOOGLE_MAPS_PLACE_URL } from '../constants';
 import type { Review } from '../types';
 
 const About: React.FC = () => {
   return (
     <Section id="about">
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center px-4 sm:px-0">
-        <div className="md:pr-12 order-2 md:order-1">
+      <div className="grid md:grid-cols-1 gap-8 md:gap-12 items-center px-4 sm:px-0">
+        <div className="order-2 md:order-1">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-brand-green mb-6 md:mb-8 tracking-tight leading-tight">Our Story</h2>
           <p className="text-gray-700 mb-5 text-base sm:text-lg leading-relaxed">
             Srivalli was born from a passion for preserving the rich culinary tapestry of South India. Our journey began in the family kitchens of Chennai, where generations-old recipes were cherished and perfected.
@@ -19,16 +19,6 @@ const About: React.FC = () => {
           <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
             Our mission is simple: to offer an authentic dining experience that transports you to the vibrant streets and warm homes of Southern India.
           </p>
-        </div>
-        <div className="order-1 md:order-2">
-          <img 
-            src={ABOUT_IMAGE} 
-            alt="Chef preparing a dish in the kitchen" 
-            className="rounded-2xl w-full h-full object-cover"
-            style={{
-              boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.1)'
-            }}
-          />
         </div>
       </div>
       

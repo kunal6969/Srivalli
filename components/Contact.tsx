@@ -5,6 +5,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -33,6 +34,7 @@ const Contact: React.FC = () => {
           access_key: 'bf2d430b-3536-4476-b992-e5a7902c3b35', // Replace this with your actual key
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
           subject: 'New Contact Form Submission from Srivalli Website'
         })
@@ -42,7 +44,7 @@ const Contact: React.FC = () => {
 
       if (result.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
@@ -131,6 +133,19 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 border-2 border-brand-green/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all text-base bg-white" 
+              />
+            </div>
+            <div className="mb-5">
+              <label htmlFor="phone" className="block text-brand-green font-semibold mb-2 text-sm sm:text-base">Phone Number *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder="+91-XXXXXXXXXX"
                 className="w-full px-4 sm:px-5 py-3 sm:py-4 border-2 border-brand-green/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all text-base bg-white" 
               />
             </div>
