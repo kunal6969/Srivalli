@@ -77,7 +77,7 @@ const Gallery: React.FC = () => {
             Moments Worth Savoring
           </h2>
           <p className="text-sm md:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Experience the artistry and ambiance of Srivalli
+            Experience the artistry and ambience of Srivalli
           </p>
         </div>
         

@@ -68,14 +68,14 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 49, name: 'White Sauce Idli', price: 119, category: 'Idli & Srivalli Special Dishes', description: 'A fusion dish with idlis tossed in a creamy white sauce.', image: '/images/menu/slot-4/white-sauce-idli.png' },
   { id: 50, name: 'Sejwan Idli', price: 129, category: 'Idli & Srivalli Special Dishes', description: 'Spicy idlis tossed in a fiery Schezwan sauce.', image: '/images/menu/slot-4/sejwan-idli.png' },
   { id: 51, name: 'Chinese Idli', price: 149, category: 'Idli & Srivalli Special Dishes', description: 'An Indo-Chinese style dish with crispy fried idlis.', image: '/images/menu/slot-4/chinese-idli.png' },
-  { id: 52, name: 'Puri Bhaaji', price: 69, category: 'Idli & Srivalli Special Dishes', description: 'Fluffy deep-fried bread served with a savory potato curry.', image: '/images/menu/slot-4/puri-bhaaji.png' },
+  { id: 52, name: 'Puri Bhaaji', price: 79, category: 'Idli & Srivalli Special Dishes', description: 'Fluffy deep-fried bread served with a savory potato curry.', image: '/images/menu/slot-4/puri-bhaaji.png' },
   { id: 53, name: 'Appey', price: 79, category: 'Idli & Srivalli Special Dishes', description: 'Small, round, savory pancakes that are crispy on the outside and soft inside.', image: '/images/menu/slot-4/appey.png' },
   { id: 54, name: 'Idli pakoda', price: 89, category: 'Idli & Srivalli Special Dishes', description: 'Crispy and delicious deep-fried idli fritters.', image: '/images/menu/slot-4/idli-pakoda.png' },
   { id: 55, name: 'Thaate Idli', price: 99, category: 'Idli & Srivalli Special Dishes', description: 'A large, plate-sized idli that is exceptionally soft and fluffy.', image: '/images/menu/slot-4/thaate-idli.png' },
   { id: 56, name: 'Ghee Podi Idli', price: 109, category: 'Idli & Srivalli Special Dishes', description: 'Mini idlis tossed in fragrant ghee and aromatic spiced powder.', image: '/images/menu/slot-4/ghee-podi-idli.png' },
   { id: 57, name: 'Dal Vada', price: 109, category: 'Idli & Srivalli Special Dishes', description: 'Crispy and savory deep-fried lentil fritters.', image: '/images/menu/slot-4/daal-vada.png' },
   { id: 58, name: 'Potato Bonda with Chutney', price: 119, category: 'Idli & Srivalli Special Dishes', description: 'Spiced potato balls coated in batter and deep-fried to perfection.', image: '/images/menu/slot-4/Potato Bonda with Chutney.png' },
-  { id: 59, name: 'Rasam Papadarn', price: 129, category: 'Idli & Srivalli Special Dishes', description: 'A tangy and spicy South Indian soup served with crispy papad.', image: '/images/menu/slot-4/rassam-pappadum.png' },
+  { id: 59, name: 'Rasam Papadam', price: 129, category: 'Idli & Srivalli Special Dishes', description: 'A tangy and spicy South Indian soup served with crispy papad.', image: '/images/menu/slot-4/rassam-pappadum.png' },
   { id: 60, name: 'Fried Idli', price: 149, category: 'Idli & Srivalli Special Dishes', description: 'Crispy fried idli cubes tossed with spices.', image: '/images/menu/slot-4/fried-idli.png' },
   
   // Agra Chat & Pizza (SLOT 5)
@@ -207,14 +207,10 @@ export const MENU_ITEMS: MenuItem[] = [
 
   // Extras & Party Menu (SLOT 11)
   { id: 176, name: 'Podi Masala', price: 10, category: 'Extras & Party Menu', description: 'A flavorful spice powder to enhance your meal.', image: '/images/menu/SLOT-11/podi-masala.png' },
-  { id: 177, name: 'Packing Charge', price: 20, category: 'Extras & Party Menu', description: 'Standard charge for all takeaway orders.', image: '/images/menu/SLOT-11/podi-masala.png' },
   { id: 178, name: 'Puri (2pcs)', price: 29, category: 'Extras & Party Menu', description: 'Two pieces of fluffy deep-fried bread.', image: '/images/menu/SLOT-11/puri-2pc.png' },
   { id: 179, name: 'Aloo Bhaji', price: 29, category: 'Extras & Party Menu', description: 'A simple and delicious potato curry side dish.', image: '/images/menu/SLOT-11/aloo-bhaji.png' },
   { id: 180, name: 'Thairu (Curd)', price: 29, category: 'Extras & Party Menu', description: 'A side of plain, refreshing yogurt.', image: '/images/menu/SLOT-11/Thairu(curd).png' },
   { id: 181, name: 'Cheese/Butter/Ghee', price: 30, category: 'Extras & Party Menu', description: 'An extra serving of cheese, butter, or ghee.', image: '/images/menu/SLOT-11/cheese-butter-ghee.png' },
-  { id: 182, name: 'Unlimited Party Menu (₹299 Plan)', price: 299, category: 'Extras & Party Menu', description: 'Our basic unlimited party package per person. Please inquire for details.', image: '/images/menu/SLOT-11/unlimited-party-menu-299.png' },
-  { id: 183, name: 'Unlimited Party Menu (₹349 Plan)', price: 349, category: 'Extras & Party Menu', description: 'Our standard unlimited party package per person. Please inquire for details.', image: '/images/menu/SLOT-11/unlimited-party-menu-349.png' },
-  { id: 184, name: 'Unlimited Party Menu (₹399 Plan)', price: 399, category: 'Extras & Party Menu', description: 'Our premium unlimited party package per person. Please inquire for details.', image: '/images/menu/SLOT-11/unlimited-party-menu-399.png' },
 ];
 
 
