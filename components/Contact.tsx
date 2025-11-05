@@ -24,7 +24,16 @@ const Contact: React.FC = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const formPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        subject: 'New Contact Form Submission from Srivalli Website'
+      };
+
+      // Send to first email
+      const response1 = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,18 +41,27 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify({
           access_key: 'bf2d430b-3536-4476-b992-e5a7902c3b35',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          subject: 'New Contact Form Submission from Srivalli Website',
-          cc: '2023uee2010@mnit.ac.in,maheshchandak69@gmail.com'
+          ...formPayload
         })
       });
 
-      const result = await response.json();
+      // Send to second email (create a new access key for 2023uee2010@mnit.ac.in)
+      const response2 = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '4efee5dd-fda4-40a8-8d91-7e5ed935c2ad',
+          ...formPayload
+        })
+      });
 
-      if (result.success) {
+      const result1 = await response1.json();
+      const result2 = await response2.json();
+
+      if (result1.success && result2.success) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
