@@ -31,12 +31,14 @@ const Contact: React.FC = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'bf2d430b-3536-4476-b992-e5a7902c3b35', // Replace this with your actual key
+          access_key: 'bf2d430b-3536-4476-b992-e5a7902c3b35',
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          subject: 'New Contact Form Submission from Srivalli Website'
+          subject: 'New Contact Form Submission from Srivalli Website',
+          to: 'maheshchandak69@gmail.com',
+          cc: 'kunalthapliyal07@gmail.com'
         })
       });
 
@@ -71,7 +73,7 @@ const Contact: React.FC = () => {
           <div className="space-y-5 text-gray-700 text-base sm:text-lg">
             <p className="leading-relaxed"><strong className="text-brand-green">Address:</strong> D-178, Anurag Path, behind WTP, D-Block, Malviya Nagar, Jaipur, Rajasthan 302017</p>
             <p><strong className="text-brand-green">Phone:</strong> <a href="tel:+919314662006" className="hover:text-brand-terracotta transition-colors">+91-9314662006</a></p>
-            <p><strong className="text-brand-green">Email:</strong> <a href="mailto:reservations@srivalli.com" className="hover:text-brand-terracotta transition-colors">reservations@srivalli.com</a></p>
+            <p><strong className="text-brand-green">Email:</strong> <a href="mailto:maheshchandak69@gmail.com" className="hover:text-brand-terracotta transition-colors">maheshchandak69@gmail.com</a></p>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold text-brand-green mt-8 mb-5">Operating Hours</h3>
           <div className="space-y-3 text-gray-700 text-base sm:text-lg">

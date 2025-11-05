@@ -41,8 +41,8 @@ const Footer: React.FC = () => {
                         <h4 className="font-bold text-white mb-4 sm:mb-5 text-base sm:text-lg">Contact Us</h4>
                         <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-brand-cream/90">
                             <p>D-178, Anurag Path,<br/>Malviya Nagar, Jaipur</p>
-                            <p><a href="mailto:contact@srivalli.com" className="hover:text-brand-gold transition-colors">contact@srivalli.com</a></p>
-                            <p><a href="tel:+919314662006" className="hover:text-brand-gold transition-colors">+91 9314662006</a></p>
+                            <p><a href="mailto:maheshchandak69@gmail.com" className="hover:text-brand-gold transition-colors">maheshchandak69@gmail.com</a></p>
+                            <p><a href="tel:+919314662006" className="hover:text-brand-gold transition-colors">+91-9314662006</a></p>
                         </div>
                     </div>
                     <div className="text-center md:text-left">
