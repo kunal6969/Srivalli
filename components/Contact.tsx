@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          subject: 'New Contact Form Submission from Srivalli Website',
+          subject: 'New Contact Form Submission from srivalli.food',
           to: 'maheshchandak69@gmail.com'
           
         })
