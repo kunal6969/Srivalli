@@ -37,8 +37,8 @@ const Contact: React.FC = () => {
           phone: formData.phone,
           message: formData.message,
           subject: 'New Contact Form Submission from Srivalli Website',
-          to: 'maheshchandak69@gmail.com',
-          cc: 'kunalthapliyal07@gmail.com'
+          to: 'maheshchandak69@gmail.com'
+          
         })
       });
 
